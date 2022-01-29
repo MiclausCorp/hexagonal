@@ -23,15 +23,54 @@
 //  ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE 
 //  OR OTHER DEALINGS IN THE SOFTWARE.
 
-window.addEventListener('load', function() {
-    document.querySelector('input[type="file"]').addEventListener('change', function() {
-        if (this.files && this.files[0]) {
-            var img = document.querySelector('img');
-            img.onload = () => {
-                URL.revokeObjectURL(img.src);
-            }
-  
-            img.src = URL.createObjectURL(this.files[0]);
+/* --- Global HTML Objects --- */
+/// Uploaded image
+const imgInput = document.getElementById('input');
+
+/// Working Canvas
+const canvas = document.getElementById("canvas");
+
+/// Working Canvas Context
+const canvasContext = canvas.getContext("2d");
+
+/* --- Global Variables --- */
+/// Hexagon mask image
+const hexagonMask = new Image();
+hexagonMask.src = "mask.png";
+
+/* --- Global Events --- */
+/// Image Upload global event
+imgInput.addEventListener('change', function (e) {
+        if (e.target.files) {
+            // Get the first uploaded file
+            let imageFile = e.target.files[0];
+
+            // Read the file
+            var reader = new FileReader();
+            reader.readAsDataURL(imageFile);
+
+            // Load the canvas with the file
+            reader.onloadend = function (e) {
+                // Creates image object
+                var image = new Image();
+
+                // Assign converted image to image object
+                image.src = e.target.result;
+                
+                // Drawing event:
+                image.onload = function () {
+                    // Load the mask
+                    canvasContext.drawImage(hexagonMask, 0, 0);
+
+                    // Change composite mode to use the Hexagon mask
+                    canvasContext.globalCompositeOperation = 'source-in';
+
+                    // Draw image to canvas
+                    canvasContext.drawImage(image, 0, 0, 400, 400);
+
+                    // Assigns image base64 string in jpeg format to a variable
+                    // let imgData = canvas.toDataURL("image/jpeg", 1);
+                };
+            };
         }
     });
-  });
