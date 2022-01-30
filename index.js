@@ -39,6 +39,9 @@ const hexagonMask = new Image();
 hexagonMask.src = "mask.png";
 
 /* --- Global Events --- */
+/// Get current year for footer.
+document.getElementById("year").innerHTML = `${new Date().getFullYear()}`;
+
 /// Image Upload global event
 imgInput.addEventListener('change', function (e) {
         if (e.target.files) {
@@ -73,4 +76,5 @@ imgInput.addEventListener('change', function (e) {
                 };
             };
         }
-    });
+    }
+);
