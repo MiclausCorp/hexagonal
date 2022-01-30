@@ -28,8 +28,8 @@
 canvas {
     max-width: 400px;
     max-height: 400px;
-    width: 75%;
-    height: 75%;
+    width: 35%;
+    height: 35%;
     display: flex;
     align-items: center;
 }
@@ -54,6 +54,7 @@ canvas {
     width: 200px;
   }
 
+/* Upload Label */
 label {
     background-color: rgb(0, 120, 255); /* Blue */
     border: none;
@@ -67,10 +68,11 @@ label {
     overflow: hidden;
     height: 50px;
     width: 200px;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Arial", 'Roboto', sans-serif;
     
 }
 
+/* Label Span */
 .labelSpan {
     position: absolute;
     text-align: left;
@@ -84,7 +86,7 @@ label {
     overflow:hidden; /* older browsers */
 }
 
-/* Button hover*/
+/* Button hover */
 .hover:hover {
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
@@ -108,13 +110,26 @@ a {
     padding: 12px;
     font-size: 25px;
     text-decoration: none;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Arial", 'Roboto', sans-serif;
     font-weight: bold;
 }
 
 h1 {
     text-align: center;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Arial", 'Roboto', sans-serif;
+}
+
+h3 {
+    text-align: center;
+    font-family: "Arial", 'Roboto', sans-serif;
+    font-weight: lighter;
+    margin: 0;
+}
+
+h4 {
+    font-family: "Arial", 'Roboto', sans-serif;
+    font-weight: lighter;
+    text-align: center;
 }
 
 /* Footer Text */
@@ -122,7 +137,7 @@ p {
     text-align: center;
     font-size: 12px;
     margin: 5px;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Arial", sans-serif, 'Roboto', sans-serif;
 }
 /* --- Text Styles End --- */
 
