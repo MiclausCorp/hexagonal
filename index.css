@@ -1,7 +1,8 @@
-/* External Fonts */
+/** External Fonts **/
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-/* Header style */
+/* --- Views --- */
+/* Header */
 .header {
     position: fixed;
     top: 0;
@@ -9,6 +10,11 @@
     width: 100%;
     height: 50px;
     background-color: #f1f1f1;
+}
+
+/* Main Content */
+.content {
+
 }
 
 /* Footer */
@@ -19,8 +25,10 @@
     width: 100%;
     background-color: #f1f1f1;
 }
+/* --- Views End --- */
 
-/* Header link */
+/* --- Text Styles --- */
+/* Header Text */
 a {
     float: left;
     color: black;
@@ -39,29 +47,36 @@ p {
     margin: 5px;
     font-family: 'Roboto', sans-serif;
 }
+/* --- Text Styles End --- */
 
-/* Dark Appearance color scheme */
+/* --- Dark Appearance color scheme --- */
 @media (prefers-color-scheme: dark) {
+    /* Background */
     body {
         background-color: black;
         color: white;
     }
 
+    /* Header */
     .header {
         background-color: #171819;
         color: white;
     }
 
+    /* Footer */
     .footer {
         background-color: #171819;
         color: white;
     }
 
+    /* Header Text */
     a {
         color: #f5fdff;
     }
 
+    /* Footer Text */
     p {
         color: #f5fdff;
     }
 }
+/* --- Dark Appearance color scheme end --- */
