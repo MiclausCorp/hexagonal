@@ -33,6 +33,9 @@ const canvas = document.getElementById("canvas");
 /// Working Canvas Context
 const canvasContext = canvas.getContext("2d");
 
+/// File Uploaded
+const fileChosen = document.getElementById('file-chosen');
+
 /* --- Global Variables --- */
 /// Hexagon mask image
 const hexagonMask = new Image();
@@ -57,6 +60,9 @@ imgInput.addEventListener('change', function (e) {
             // Get the first uploaded file
             let imageFile = e.target.files[0];
 
+            // Set the title
+            fileChosen.textContent = imageFile.name;
+
             // Read the file
             var reader = new FileReader();
             reader.readAsDataURL(imageFile);
@@ -71,9 +77,6 @@ imgInput.addEventListener('change', function (e) {
                 
                 // Drawing event:
                 image.onload = function () {
-                    // Clear the canvas
-                    canvasContext.clearRect(0, 0, 400, 400);
-
                     // Load the mask
                     canvasContext.drawImage(hexagonMask, 0, 0);
 
