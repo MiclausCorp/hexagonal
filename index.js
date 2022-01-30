@@ -36,11 +36,20 @@ const canvasContext = canvas.getContext("2d");
 /* --- Global Variables --- */
 /// Hexagon mask image
 const hexagonMask = new Image();
-hexagonMask.src = "mask.png";
+hexagonMask.src = "mask.PNG";
 
-/* --- Global Events --- */
-/// Get current year for footer.
-document.getElementById("year").innerHTML = `${new Date().getFullYear()}`;
+/// Demo Image
+const demoImage = new Image();
+demoImage.src = "demo.PNG";
+
+/* --- Initialization Code --- */
+window.onload = function() {
+    /// Get current year for footer.
+    document.getElementById("year").innerHTML = `${new Date().getFullYear()}`;
+
+    /// Initial demo canvas image
+    canvasContext.drawImage(demoImage, 0, 0, 400, 400);
+}
 
 /// Image Upload global event
 imgInput.addEventListener('change', function (e) {
@@ -62,6 +71,9 @@ imgInput.addEventListener('change', function (e) {
                 
                 // Drawing event:
                 image.onload = function () {
+                    // Clear the canvas
+                    canvasContext.clearRect(0, 0, 400, 400);
+
                     // Load the mask
                     canvasContext.drawImage(hexagonMask, 0, 0);
 
