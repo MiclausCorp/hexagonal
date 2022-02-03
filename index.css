@@ -108,9 +108,9 @@ label {
     text-align: left;
     margin-top: 25px;
     line-height: 1;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -25%);
     max-width: 175px;
-    max-height: 50px;
+    height: 30px;
     text-overflow: ellipsis;
     white-space: nowrap; /* paragraph to one line */
     overflow:hidden; /* older browsers */
