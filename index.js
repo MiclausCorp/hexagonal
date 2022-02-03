@@ -93,3 +93,36 @@ imgInput.addEventListener('change', function (e) {
         }
     }
 );
+
+/// Avatar image download funtion
+async function download() {
+    /***** 🔥🔥🔥 HACK 🔥🔥🔥 *****/
+    /* Downloading images in JS using the regular method doesn't work
+    as of iOS 15.4 in Safari anymore for some reason. To circumvent this, we'll make an invisible
+    element in the DOM, which will be set up as a "download" HTML button, which we can then trigger programatically.
+    */
+
+    // Convert the canvas image to an octet-stream 
+    const downloadImage = await canvas.toDataURL("image/png", 1.0).replace("image/png", "image/octet-stream");
+
+    // Create an invisible download link element
+    const downloadElement = document.createElement('a');
+
+    // Validate file name
+    // If the user tries to download the default avatar, 
+    // we'll name the download file "avatar-hexagon.png". 
+    // Otherwise the provided image's name will be used.
+    if (fileChosen.textContent === 'Upload Image') {
+        // Default demo avatar. Use hardcoded download name
+        downloadElement.download = `avatar-hexagon.png`;
+    } else {
+        // Use custom image as download name
+        downloadElement.download = `${fileChosen.textContent}-hexagon.png`;
+    }
+    
+    // Set the `downloadElement`'s URL to the download image
+    downloadElement.href = downloadImage;
+
+    // And trigger a click event.
+    downloadElement.click();
+}
