@@ -1,10 +1,9 @@
 # Hexagonal
-<p align="left">
-    <img src="Assets/Banner/Banner.png" alt="Hexagonal Logo"/>
+<p align="center">
+    <img src="assets/Banner/Banner.png" width="75%" alt="Hexagonal Logo"/>
 </p>
 
-Generate Hexagonal Profile Picture Avatars for Social Media.
-Visit: [https://mdarius13.github.io/hexagonal/](https://mdarius13.github.io/hexagonal/)
+Generate Hexagonal Profile Picture Avatars for Social Media on [https://mdarius13.github.io/hexagonal/](https://mdarius13.github.io/hexagonal/)
 
 ## License
 [MIT License](LICENSE)
