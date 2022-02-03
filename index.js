@@ -23,6 +23,11 @@
 //  ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE 
 //  OR OTHER DEALINGS IN THE SOFTWARE.
 
+/***** NOTICE *****/
+/** This file is for development purposes only. **/
+/* This file should be minimised first, to make loadings faster, 
+before placing it in the release directory */
+
 /* --- Global HTML Objects --- */
 /// Uploaded image
 const imgInput = document.getElementById('input');
