@@ -4,7 +4,7 @@
 //
 //  Created by mdarius13 on 01.29.2022.
 //
-//  Copyright 2022 mdarius13
+//  Copyright (c) 2022 Miclaus Industries Corporation B.V. Advanced Software Technologies Research Group
 //
 //  Permission is hereby granted, free of charge, 
 //  to any person obtaining a copy of this software and associated documentation files (the "Software"), 
